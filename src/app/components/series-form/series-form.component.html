@@ -1,0 +1,14 @@
+<section>
+    <h1>Formulario Serie</h1>
+    <div>
+        <input 
+        type="number" 
+        min="0" 
+        #numberValue
+        (keyup)="inputValue.set(toNumber(numberValue.value))">
+    </div>
+    <br>
+    <button>Calcular</button>
+</section>
+
+<app-calculation [numberValue]="inputValue()"/>
