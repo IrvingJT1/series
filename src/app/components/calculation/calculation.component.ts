@@ -57,8 +57,60 @@ export class CalculationComponent {
     return res;
   }
 
+  getFibonacciNumber = (nElement:number = 0):number =>{
+
+    //si se toma en cta 1 como el inicio b debe ser 2, los primeros 2 elem deben retornar 1
+    let a = 1;
+    let b = 1;
+
+    if(nElement === 1)
+    {
+      return 0;
+    }
+
+    if(nElement === 2)
+    {
+      return 1;
+    }
+
+    for(let i = 3; i<nElement; i++)
+    {
+      let c = a + b;
+
+      a = b;
+      b = c;
+    }
+
+    return b;
+  }
+
+  getTriangularNumber = (nElement:number = 0):number => {
+
+    let res = 0;
+
+    res = (nElement*(nElement+1))/2;
+
+    return res;
+  }
+
+  applyEquation=(nElement:number = 0):number=>{
+
+    let res = 0;
+
+    if(nElement <= 1)
+      return -1;
+
+    res = (2*this.getPrimeNumber(nElement)*3*this.getTriangularNumber(nElement))/(7*(this.getFibonacciNumber(nElement)));
+
+    return res;
+
+  }
+
   numberEffect = effect(()=>{
-    console.log(this.getPrimeNumber(this.numberValue()))
+    // console.log(this.getPrimeNumber(this.numberValue()))
     // console.log(this.isPrime(this.numberValue()));
+    // console.log(this.getFibonacciNumber(this.numberValue()));
+    // console.log(this.getTriangularNumber(this.numberValue()));
+    console.log(this.applyEquation(this.numberValue()))
   });
 }
