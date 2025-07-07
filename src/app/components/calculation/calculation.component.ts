@@ -1,4 +1,4 @@
-import { Component, effect, input, Input, signal } from '@angular/core';
+import { Component, effect, input, Input, output, signal } from '@angular/core';
 
 @Component({
   selector: 'app-calculation',
@@ -8,6 +8,7 @@ import { Component, effect, input, Input, signal } from '@angular/core';
 })
 export class CalculationComponent {
   numberValue= input<number>();
+  serieValue = output<number>();
 
   //Se inicia desde 2 porque 0 y 1 no se consideran primos
   //res contendrá el resultado del enésimo número primo
@@ -111,6 +112,9 @@ export class CalculationComponent {
     // console.log(this.isPrime(this.numberValue()));
     // console.log(this.getFibonacciNumber(this.numberValue()));
     // console.log(this.getTriangularNumber(this.numberValue()));
-    console.log(this.applyEquation(this.numberValue()))
+    // console.log(this.applyEquation(this.numberValue()))
+
+    this.serieValue.emit(this.applyEquation(this.numberValue()));
+
   });
 }
