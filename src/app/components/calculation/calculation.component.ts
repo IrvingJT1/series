@@ -12,7 +12,7 @@ export class CalculationComponent {
   //Se inicia desde 2 porque 0 y 1 no se consideran primos
   //res contendrá el resultado del enésimo número primo
 
-  getPrimeNumber = (nElement:number = 0):number =>{
+  getPrimeNumber = (nElement:number):number =>{
     
     if(nElement === 0) return -1;
 
@@ -33,7 +33,7 @@ export class CalculationComponent {
     return numberSerie-1;
   }
 
-  isPrime = (numberSerie:number = 0): boolean =>{
+  isPrime = (numberSerie:number): boolean =>{
 
     let res = false;
 
@@ -57,7 +57,7 @@ export class CalculationComponent {
     return res;
   }
 
-  getFibonacciNumber = (nElement:number = 0):number =>{
+  getFibonacciNumber = (nElement:number):number =>{
 
     //si se toma en cta 1 como el inicio b debe ser 2, los primeros 2 elem deben retornar 1
     let a = 1;
@@ -84,7 +84,7 @@ export class CalculationComponent {
     return b;
   }
 
-  getTriangularNumber = (nElement:number = 0):number => {
+  getTriangularNumber = (nElement:number):number => {
 
     let res = 0;
 
