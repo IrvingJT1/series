@@ -14,9 +14,22 @@ export class SeriesFormComponent {
 
   serieValue = signal<number>(0);
 
+  init = signal<boolean>(true);
+
   toNumber(value: string) {
     return Number(value);
   }
 
-  //Do method to avoid the '-' and '.'
+  startCalc = (nElement:number) =>{
+    this.inputValue.set(nElement);
+    this.init.set(false);
+  }
+
+  avoidCharacters = (event: KeyboardEvent) => {
+    console.log(event)
+    if(event.key == '.' || event.key == '-' || event.key=='e' || event.key=='+')
+      event.preventDefault();
+
+  }
+
 }

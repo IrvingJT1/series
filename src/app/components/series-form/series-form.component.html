@@ -7,13 +7,19 @@
         type="number" 
         min="0" 
         #numberValue
-        (keyup)="inputValue.set(toNumber(numberValue.value))">
+        (keydown)="avoidCharacters($event)"
+        (keyup.enter)="startCalc(toNumber(numberValue.value))">
     </div>
     <br>
-    <button class="border-2 bg-cyan-700 rounded-sm text-white w-40 hover:border-cyan-900">Calcular</button>
+    <button (click)="startCalc(toNumber(numberValue.value))" class="border-2 bg-cyan-700 rounded-sm text-white w-40 hover:border-cyan-900">Calcular</button>
 
-    <app-calculation [numberValue]="inputValue()" (serieValue)="serieValue.set($event)"/>
+    @if(!init())
+    {
+        <app-calculation [numberValue]="inputValue()" (serieValue)="serieValue.set($event)"/>
+        <app-result [serieValue]="serieValue()"/>
 
-    <app-result [serieValue]="serieValue()"/>
+    }
+
+
 </section>
 

@@ -131,6 +131,8 @@ describe('CalculationComponent', () => {
 
   });
 
+  // testing solicitado en el correo con los 10 números naturales empezando desde 1
+
   it('testing applyEquation Method, if nElement is 1', () =>{
     
     let nElement = 1;
@@ -142,29 +144,120 @@ describe('CalculationComponent', () => {
 
   });
 
-  it('testing applyEquation Method, if nElement is 11', () =>{
+  it('testing applyEquation Method, if nElement is 2', () =>{
     
-    let nElement = 11;
+    let nElement = 2;
     let res = 0;
     
     res = component.applyEquation(nElement);
 
     res = Number(res.toFixed(2));
 
-    expect(res).toBe(31.89);
+    expect(res).toBe(0);
 
   });
 
-  it('testing applyEquation Method, if nElement is 20', () =>{
+  it('testing applyEquation Method, if nElement is 3', () =>{
     
-    let nElement = 20;
+    let nElement = 3;
     let res = 0;
     
     res = component.applyEquation(nElement);
 
     res = Number(res.toFixed(2));
 
-    expect(res).toBe(3.06);
+    expect(res).toBe(9.43);
+
+  });
+
+  it('testing applyEquation Method, if nElement is 4', () =>{
+    
+    let nElement = 4;
+    let res = 0;
+    
+    res = component.applyEquation(nElement);
+
+    res = Number(res.toFixed(2));
+
+    expect(res).toBe(16.71);
+
+  });
+
+  it('testing applyEquation Method, if nElement is 5', () =>{
+    
+    let nElement = 5;
+    let res = 0;
+    
+    res = component.applyEquation(nElement);
+
+    res = Number(res.toFixed(2));
+
+    expect(res).toBe(29.14);
+
+  });
+
+  it('testing applyEquation Method, if nElement is 6', () =>{
+    
+    let nElement = 6;
+    let res = 0;
+    
+    res = component.applyEquation(nElement);
+
+    res = Number(res.toFixed(2));
+
+    expect(res).toBe(32.57);
+
+  });
+
+  it('testing applyEquation Method, if nElement is 7', () =>{
+    
+    let nElement = 7;
+    let res = 0;
+    
+    res = component.applyEquation(nElement);
+
+    res = Number(res.toFixed(2));
+
+    expect(res).toBe(36.96);
+
+  });
+
+  it('testing applyEquation Method, if nElement is 8', () =>{
+    
+    let nElement = 8;
+    let res = 0;
+    
+    res = component.applyEquation(nElement);
+
+    res = Number(res.toFixed(2));
+
+    expect(res).toBe(40.15);
+
+  });
+
+  it('testing applyEquation Method, if nElement is 9', () =>{
+    
+    let nElement = 9;
+    let res = 0;
+    
+    res = component.applyEquation(nElement);
+
+    res = Number(res.toFixed(2));
+
+    expect(res).toBe(35.43);
+
+  });
+
+  it('testing applyEquation Method, if nElement is 10', () =>{
+    
+    let nElement = 10;
+    let res = 0;
+    
+    res = component.applyEquation(nElement);
+
+    res = Number(res.toFixed(2));
+
+    expect(res).toBe(33.58);
 
   });
 });

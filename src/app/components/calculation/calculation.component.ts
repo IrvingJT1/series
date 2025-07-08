@@ -28,6 +28,7 @@ export class CalculationComponent {
         positionIndicator++;
       }
 
+      //esta es la razon por la que se aplica el -1 del final
       numberSerie++;
     }
 
@@ -101,13 +102,14 @@ export class CalculationComponent {
     if(nElement <= 1)
       return -1;
 
-    res = (2*this.getPrimeNumber(nElement)*3*this.getTriangularNumber(nElement))/(7*(this.getFibonacciNumber(nElement)));
+    res = (2*this.getPrimeNumber(nElement+2)*3*this.getTriangularNumber(nElement-2))/(7*(this.getFibonacciNumber(nElement)));
 
     return res;
 
   }
 
   numberEffect = effect(()=>{
+    console.log('Se ejecuta effect')
     // console.log(this.getPrimeNumber(this.numberValue()))
     // console.log(this.isPrime(this.numberValue()));
     // console.log(this.getFibonacciNumber(this.numberValue()));
@@ -116,5 +118,6 @@ export class CalculationComponent {
 
     this.serieValue.emit(this.applyEquation(this.numberValue()));
 
-  });
+  }
+);
 }
