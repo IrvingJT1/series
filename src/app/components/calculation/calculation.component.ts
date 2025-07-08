@@ -109,12 +109,6 @@ export class CalculationComponent {
   }
 
   numberEffect = effect(()=>{
-    console.log('Se ejecuta effect')
-    // console.log(this.getPrimeNumber(this.numberValue()))
-    // console.log(this.isPrime(this.numberValue()));
-    // console.log(this.getFibonacciNumber(this.numberValue()));
-    // console.log(this.getTriangularNumber(this.numberValue()));
-    // console.log(this.applyEquation(this.numberValue()))
 
     this.serieValue.emit(this.applyEquation(this.numberValue()));
 
